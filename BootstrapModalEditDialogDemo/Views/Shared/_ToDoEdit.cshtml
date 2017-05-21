@@ -11,16 +11,16 @@
         Configure the AjaxOptions
     -->
 
-    @using (Ajax.BeginForm("EditStation", "Home", new AjaxOptions
+    @using (Ajax.BeginForm("EditToDo", "Home", new AjaxOptions
     {
         InsertionMode = InsertionMode.Replace,
         HttpMethod = "POST",
-        UpdateTargetId = "editor-success-@toDoModel.ToDoId", 
+        UpdateTargetId = "editor-success-" + Model.ToDoId, 
         OnSuccess = "toDoEditSuccess",
         OnFailure = "toDoEditFailure"
     }))
     {
-        @Html.Partial("_ValidationSummary")
+        @Html.ValidationSummary()
         @Html.AntiForgeryToken()
         @Html.HiddenFor(model => model.ToDoId)
         <div class="form-horizontal">
@@ -35,7 +35,7 @@
                 <div class="col-sm-offset-3 col-sm-9">
                     <div class="checkbox">
                         <label>
-                            @Html.CheckBoxFor(model => model.Completed) Hide Header
+                            @Html.CheckBoxFor(model => model.Completed) Completed
                         </label>
                     </div>
                 </div>
