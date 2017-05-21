@@ -10,32 +10,8 @@
 </div>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-        <!--TODO Turn this into its own view so it can be reloaded when new items are added-->
-        <table class="table table-condensed">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Description</th>
-                    <th class="text-center">Completed</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <!--
-                    Add a table row for each ToDoItem, 
-                    creating a unique id for the row based on the ToDoId
-                -->
-                @foreach (var toDoModel in Model)
-                {
-                    <tr id="editor-success-@toDoModel.ToDoId">
-                        @Html.Partial("_ToDoDataRow", toDoModel)
-                    </tr>
-                }
-            </tbody>
-        </table>
-        <button id="add-button">Add ToDo...</button>
+    <div class="col-md-8 col-md-offset-2" id="todo-list-container">
+        @Html.Partial("_ToDoItemsList", Model)
     </div>
 
     <!--Modal Dialog For Editing ToDo Items-->

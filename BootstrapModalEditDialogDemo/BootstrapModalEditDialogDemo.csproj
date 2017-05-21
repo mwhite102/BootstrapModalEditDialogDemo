@@ -191,6 +191,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_ToDoDataRow.cshtml" />
     <Content Include="Views\Shared\_ToDoEdit.cshtml" />
+    <Content Include="Views\Shared\_ToDoItemsList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
