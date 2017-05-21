@@ -11,7 +11,6 @@
 
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
-        
         <table class="table table-condensed">
             <thead>
                 <tr>
@@ -22,15 +21,26 @@
                     <th></th>
                 </tr>
             </thead>
-
-            @foreach(var toDoModel in Model)
-            {
-                <tr id="editor-success-@toDoModel.ToDoId">
+            <tbody>
+                <!--
+                    Add a table row for each ToDoItem, 
+                    creating a unique id for the row based on the ToDoId
+                -->
+                @foreach (var toDoModel in Model)
+                {
+                    <tr id="editor-success-@toDoModel.ToDoId">
                         @Html.Partial("_ToDoDataRow", toDoModel)
-                </tr>
-            }
-
+                    </tr>
+                }
+            </tbody>
         </table>
-
     </div>
+
+    <!--Modal Dialog For Editing ToDo Items-->
+    <div class="modal fade" id="editor-container" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content" id="editor-content-container"></div>
+        </div>
+    </div>
+
 </div>
