@@ -19,7 +19,7 @@ namespace BootstrapModalEditDialogDemo.Controllers
         public ActionResult AddToDo()
         {
             ToDoModel model = new ToDoModel();
-            return PartialView("_ToDoEdit", model);
+            return PartialView("_ToDoAdd", model);
         }
 
         [HttpPost, ValidateAntiForgeryToken]
@@ -32,8 +32,8 @@ namespace BootstrapModalEditDialogDemo.Controllers
                 {
                     if (ToDoDataService.InsertToDoItem(model))
                     {
-                        // Reload the ToDoItem
-                        return PartialView("_ToDoDataRow", model);
+                        // Reload the ToDoItems
+                        return PartialView("_ToDoItemsList", ToDoDataService.GetToDoList());
                     }
                 }
                 catch (Exception ex)
@@ -44,7 +44,7 @@ namespace BootstrapModalEditDialogDemo.Controllers
 
             // Failed Validation
             Response.StatusCode = 400;
-            return PartialView("_ToDoEdit", model);
+            return PartialView("_ToDoAdd", model);
         }
 
 
@@ -85,7 +85,7 @@ namespace BootstrapModalEditDialogDemo.Controllers
         {
             if (ToDoDataService.DeleteToDoItem(id))
             {
-                return new EmptyResult();
+                return PartialView("_ToDoItemsList", ToDoDataService.GetToDoList());
             }
             else
             {

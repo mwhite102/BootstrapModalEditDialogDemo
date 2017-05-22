@@ -192,6 +192,8 @@
     <Content Include="Views\Shared\_ToDoDataRow.cshtml" />
     <Content Include="Views\Shared\_ToDoEdit.cshtml" />
     <Content Include="Views\Shared\_ToDoItemsList.cshtml" />
+    <Content Include="Views\Shared\_ToDoEditFormContent.cshtml" />
+    <Content Include="Views\Shared\_ToDoAdd.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -2,7 +2,7 @@
 
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-    <h4 class="modal-title" id="editor-title">ToDo Properties</h4>
+    <h4 class="modal-title" id="editor-title">New ToDo</h4>
 </div>
 
 <div class="modal-body">
@@ -11,11 +11,11 @@
         Configure the AjaxOptions
     -->
 
-    @using (Ajax.BeginForm("EditToDo", "Home", new AjaxOptions
+    @using (Ajax.BeginForm("AddToDo", "Home", new AjaxOptions
     {
         InsertionMode = InsertionMode.Replace,
         HttpMethod = "POST",
-        UpdateTargetId = "editor-success-" + Model.ToDoId, 
+        UpdateTargetId = "todo-list-container",
         OnSuccess = "toDoEditSuccess",
         OnFailure = "toDoEditFailure"
     }))
@@ -31,3 +31,5 @@
     *@
     @Scripts.Render("~/bundles/jqueryval")
 </scripts>
+
+
