@@ -2,8 +2,10 @@
 A demo using Bootstrap 3 modal dialogs in an ASP.NET application
 
 ## Platform
-Created with Visual Studio 2017
-ASP.NET MVC 5.2
+Created with Visual Studio 2017 
+
+ASP.NET MVC 5.2 
+
 Bootstrap 3
 
 ## Prerequisites
