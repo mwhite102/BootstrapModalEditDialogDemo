@@ -1,4 +1,4 @@
-# BootstrapModalEditDialogDemo
+# Bootstrap Modal Edit Dialog Demo
 A demo using Bootstrap 3 modal dialogs in an ASP.NET application
 
 ## Platform
